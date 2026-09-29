@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ECHO Journal Recall for Obsidian 的合成数据交互演示：从今天的笔记找回相关的旧片段。">
+    <meta name="theme-color" content="#f4eff7">
+    <title>ECHO Journal Recall for Obsidian · 交互演示</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <nav class="site-nav" aria-label="主要导航">
+      <a class="wordmark" href="#top" aria-label="ECHO 首页">
+        ECHO <small>for Obsidian</small>
+      </a>
+      <div class="nav-links">
+        <a href="#demo">交互演示</a>
+        <a href="#scope">功能边界</a>
+        <a href="#privacy">API 与隐私</a>
+        <a class="nav-cta" href="https://github.com/miaory-crypto/obsidian-echo-journal">GitHub 项目</a>
+      </div>
+      <a class="nav-cta nav-cta--mobile" href="#demo">体验 demo</a>
+    </nav>
+
+    <main id="main">
+      <header class="hero shell" id="top">
+        <div class="hero-copy">
+          <span class="eyebrow">Obsidian 插件 · 本地优先</span>
+          <h1>让旧笔记回答今天的问题。</h1>
+          <p class="hero-lede">
+            ECHO 在 Obsidian 里从今天的笔记或选中文字出发，找回过去相关的日记片段；默认可用本地模型检索，需要时再接入你自己的 AI API 继续对话。
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#demo">用合成笔记体验</a>
+            <a class="button button--secondary" href="#privacy">API key 怎么处理</a>
+          </div>
+        </div>
+        <aside class="hero-note" aria-label="设计原则">
+          <p>不是替你总结人生，而是在需要的时候，把当时写下的证据带回来。</p>
+          <small>默认不上传笔记 · 不含遥测 · 外部 AI 完全可选</small>
+        </aside>
+      </header>
+
+      <section class="section shell" id="demo" aria-labelledby="demo-title">
+        <div class="section-intro">
+          <div>
+            <span class="section-index">01 / 可点击演示</span>
+            <h2 class="section-heading" id="demo-title">五步看懂 ECHO</h2>
+          </div>
+          <p class="section-copy">
+            下面用“烤面包时一次只改变一个变量”的虚构故事演示从检索到反思的完整方向。前 3 步对应插件现有能力；后 2 步是产品概念，不会冒充已完成的功能。
+          </p>
+        </div>
+
+        <div class="demo-disclaimer" role="note">
+          <span class="status-dot" aria-hidden="true"></span>
+          <div>
+            <strong>这是安全的静态演示。</strong>
+            所有日期、笔记与回答均为合成内容；按钮只切换本页状态，不读取文件、不保存输入，也不调用任何模型 API。
+          </div>
+        </div>
+
+        <div class="workflow" data-workflow>
+          <div class="workflow-steps" aria-label="演示步骤">
+            <button class="step-button" type="button" data-step-button="0" aria-current="step">
+              <span>01</span><small>写下今天</small>
+            </button>
+            <button class="step-button" type="button" data-step-button="1">
+              <span>02</span><small>找回过去</small>
+            </button>
+            <button class="step-button" type="button" data-step-button="2">
+              <span>03</span><small>继续对话</small>
+            </button>
+            <button class="step-button" type="button" data-step-button="3">
+              <span>04</span><small>保存想法</small>
+            </button>
+            <button class="step-button" type="button" data-step-button="4">
+              <span>05</span><small>日后验证</small>
+            </button>
+          </div>
+
+          <div class="workflow-body">
+            <p class="quiet-status" data-progress aria-live="polite">步骤 1 / 5 · 写下今天</p>
+
+            <article class="step-panel" data-step-panel="0" aria-labelledby="step-one-title">
+              <div class="panel-head">
+                <div>
+                  <h3 id="step-one-title">从正在写的这句话开始</h3>
+                  <p>真实插件可检索整篇当前笔记，也可只检索你选中的文字。</p>
+                </div>
+                <span class="badge">插件已实现</span>
+              </div>
+              <div class="note-sheet">
+                <time datetime="2026-04-18">2026-04-18 · 厨房实验</time>
+                <h4>第二次烤面包</h4>
+                <p>
+                  今天同时提高了烤箱温度，也给面团多加了水。内部更松软了，
+                  <span class="selection-mark">但我分不清究竟是哪一个变化起了作用。</span>
+                </p>
+              </div>
+              <div class="panel-actions">
+                <button class="button" type="button" data-action="retrieve">找回相关旧片段</button>
+                <span class="quiet-status" data-step-status="0">演示会模拟一次本地检索</span>
+              </div>
+            </article>
+
+            <article class="step-panel" data-step-panel="1" aria-labelledby="step-two-title" hidden>
+              <div class="panel-head">
+                <div>
+                  <h3 id="step-two-title">过去留下了两个线索</h3>
+                  <p>相关性来自语义，而不只是在找相同关键词。这里点击片段只会突出显示；真实插件会自动携带最多 5 条候选进入对话上下文。</p>
+                </div>
+                <span class="badge">插件已实现</span>
+              </div>
+              <div class="result-list" aria-label="相关历史片段">
+                <button class="result-item" type="button" aria-pressed="true" data-result>
+                  <span class="result-item__score">92</span>
+                  <span class="result-item__text">
+                    <span class="source-meta">2026-02-14 · 第一次烤面包</span>
+                    <strong>下次只改变发酵时间</strong>
+                    <span class="result-item__excerpt">温度和配方保持不变，把结果记下来，比凭印象同时改很多条件更容易比较。</span>
+                  </span>
+                </button>
+                <button class="result-item" type="button" aria-pressed="false" data-result>
+                  <span class="result-item__score">84</span>
+                  <span class="result-item__text">
+                    <span class="source-meta">2026-03-08 · 阳台植物观察</span>
+                    <strong>给两盆薄荷做对照</strong>
+                    <span class="result-item__excerpt">使用相同土壤，只改变花盆排水条件；观察一周后再决定下一步。</span>
+                  </span>
+                </button>
+              </div>
+              <div class="panel-actions">
+                <button class="button" type="button" data-action="explain">让 ECHO 帮我串起来</button>
+                <button class="button button--text" type="button" data-action="back" data-target="0">返回今天的笔记</button>
+              </div>
+            </article>
+
+            <article class="step-panel" data-step-panel="2" aria-labelledby="step-three-title" hidden>
+              <div class="panel-head">
+                <div>
+                  <h3 id="step-three-title">默认检索可在本地完成，对话由你决定</h3>
+                  <p>真实插件只有在你主动开启并点击后，才会把当前文本与候选片段发给你配置的对话 API。</p>
+                </div>
+                <span class="badge">插件已实现</span>
+              </div>
+              <div class="chat-stack">
+                <div class="message">
+                  <span class="meta-label">ECHO · 固定演示回答</span>
+                  <p>你两次都在寻找“到底是什么让结果变好”，但今天同时改了两个变量。过去的你已经用植物和第一次烘焙提醒过自己：先保持其余条件不变。下一次你愿意先固定哪一项？</p>
+                </div>
+                <div class="message message--user" data-user-message hidden>
+                  <span class="meta-label">你的选择</span>
+                  <p data-user-choice></p>
+                </div>
+              </div>
+              <div class="choice-list" aria-label="选择一个回答">
+                <button class="choice" type="button" aria-pressed="false" data-choice="下一次只改变发酵时间，先保持温度和含水量不变。">先固定温度和含水量</button>
+                <button class="choice" type="button" aria-pressed="false" data-choice="我想先做一个简单的实验记录模板，再开始第三次烘焙。">先做实验记录模板</button>
+              </div>
+              <div class="panel-actions">
+                <button class="button" type="button" data-action="to-insight" disabled>继续看产品方向</button>
+                <span class="quiet-status">本页不会发送这次选择</span>
+              </div>
+            </article>
+
+            <article class="step-panel" data-step-panel="3" aria-labelledby="step-four-title" hidden>
+              <div class="panel-head">
+                <div>
+                  <h3 id="step-four-title">把一次对话变成可检验的想法</h3>
+                  <p>这一层尚未进入当前插件。它展示的是 ECHO 未来可能如何让用户亲自确认，而不是让 AI 自动下结论。</p>
+                </div>
+                <span class="badge badge--concept">概念演示</span>
+              </div>
+              <div class="insight-editor">
+                <label for="insight">准备保存的想法</label>
+                <textarea id="insight" data-insight>想弄清经验中的因果时，一次只改变一个变量，并记下结果。</textarea>
+                <p class="field-hint">这里只保存在当前页面内存中；刷新页面就会消失。</p>
+                <p class="field-error" data-insight-error role="alert" hidden>先写下一句话，再保存这个演示想法。</p>
+              </div>
+              <div class="panel-actions">
+                <button class="button" type="button" data-action="save-insight">保存这个想法（演示）</button>
+                <button class="button button--text" type="button" data-action="back" data-target="2">回到对话</button>
+              </div>
+            </article>
+
+            <article class="step-panel" data-step-panel="4" aria-labelledby="step-five-title" hidden>
+              <div class="panel-head">
+                <div>
+                  <h3 id="step-five-title">让未来的经历回来验证它</h3>
+                  <p>这是远期概念：新笔记出现时提醒你，某个由你确认的想法有了新的支持或反例。</p>
+                </div>
+                <span class="badge badge--concept">概念演示</span>
+              </div>
+              <ol class="timeline">
+                <li>
+                  <time datetime="2026-02-14">2026-02-14</time>
+                  <h4>第一次烤面包</h4>
+                  <p>先写下“一次只改一个变量”的做法。</p>
+                </li>
+                <li>
+                  <time datetime="2026-04-18">2026-04-18</time>
+                  <h4>今天重新遇见这个模式</h4>
+                  <p>ECHO 找回旧片段，你把它改写成自己的判断。</p>
+                </li>
+                <li>
+                  <time datetime="2026-05-02">未来的合成笔记</time>
+                  <h4>第三次烘焙只改发酵时间</h4>
+                  <p>结果更容易解释：这条想法获得一次支持，但仍然可以被之后的经历修正。</p>
+                </li>
+              </ol>
+              <div class="panel-actions">
+                <button class="button" type="button" data-action="reset">从头再体验</button>
+                <a class="button button--secondary" href="#scope">查看当前真实边界</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" id="scope" aria-labelledby="scope-title">
+        <div class="section-intro">
+          <div>
+            <span class="section-index">02 / 不夸大功能</span>
+            <h2 class="section-heading" id="scope-title">现在能做什么，之后想做什么</h2>
+          </div>
+          <p class="section-copy">
+            demo 把现状和愿景放在同一条故事线上，但标签不会混在一起。公开项目中的代码、安装说明与版本号才是实际能力的准绳。
+          </p>
+        </div>
+        <div class="boundary-grid">
+          <article class="boundary-column">
+            <span class="badge">0.8.5 候选版已实现</span>
+            <h3>可安装的 Obsidian 桌面插件</h3>
+            <ul class="boundary-list">
+              <li>用整篇笔记或选中文字检索相关历史片段</li>
+              <li>默认通过本机 Ollama 建立语义索引</li>
+              <li>收藏片段、添加标注、定位回原文</li>
+              <li>可选使用自己的 API 做解释和连续对话</li>
+            </ul>
+          </article>
+          <article class="boundary-column boundary-column--future">
+            <span class="badge badge--concept">尚未实现</span>
+            <h3>demo 中的产品方向</h3>
+            <ul class="boundary-list">
+              <li>把对话确认成结构化的长期想法</li>
+              <li>未来笔记自动回来支持或挑战旧判断</li>
+              <li>以时间线查看想法如何被经历修正</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section shell" id="privacy" aria-labelledby="privacy-title">
+        <div class="section-intro">
+          <div>
+            <span class="section-index">03 / BYOK 与隐私</span>
+            <h2 class="section-heading" id="privacy-title">API key 留给使用者自己掌控</h2>
+          </div>
+          <p class="section-copy">
+            项目不附带开发者密钥，也不经过项目方的中转服务器。你可以完全不填 key；只有启用外部能力时，才使用你向相应服务商申请的凭据。
+          </p>
+        </div>
+
+        <dl class="privacy-ledger">
+          <div class="ledger-row">
+            <dt>默认本地检索</dt>
+            <dd>Ollama 模式不需要 API key。笔记片段会发给你配置的 Ollama 地址，默认是本机 <code>127.0.0.1</code>。</dd>
+          </div>
+          <div class="ledger-row">
+            <dt>外部 embedding</dt>
+            <dd>只使用单独的 embedding endpoint 与 key；只有明确设置日记文件夹后才能运行，避免误索引整个 Vault。</dd>
+          </div>
+          <div class="ledger-row">
+            <dt>AI 解释与聊天</dt>
+            <dd>默认关闭。只有你主动开启并点击，才把当前文本、候选片段和近期对话发给单独配置的 guidance/chat API。</dd>
+          </div>
+          <div class="ledger-row">
+            <dt>不会自动复用</dt>
+            <dd>插件不会把 embedding key 自动复制、回退或复用于对话功能。服务商条款、隐私政策与可能产生的费用由用户自行确认。</dd>
+          </div>
+        </dl>
+
+        <details class="plain-details">
+          <summary>Key 存在哪里？为什么不能提交到 GitHub？</summary>
+          <div class="details-body">
+            <p>
+              Key 会以明文保存在 Vault 的 <code>.obsidian/plugins/diary-review/data.json</code>，可能随 Vault 同步或系统备份被复制。公开仓库只提供空字段示例，并用 <code>.gitignore</code> 排除 <code>data.json</code>、<code>.env</code>、索引与常见密钥文件；你仍需避免把真实设置、日志或截图上传到 issue。
+            </p>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="foot-stmt" id="project">
+      <p class="foot-stmt__line">把过去带回来，但把决定留给你。</p>
+      <div class="foot-stmt__meta">
+        <a class="wordmark" href="#top">ECHO <small>Journal Recall</small></a>
+        <span>合成内容 demo · 不调用模型 API</span>
+        <a href="https://github.com/miaory-crypto/obsidian-echo-journal">GitHub 项目</a>
+      </div>
+    </footer>
+  </body>
+</html>

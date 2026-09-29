@@ -1,0 +1,27 @@
+{
+  "version": "1.1",
+  "status": "built-static-qa-complete-visual-qa-blocked-by-sandbox",
+  "scores": {
+    "palette": 5,
+    "hierarchy": 5,
+    "expression": 5,
+    "specificity": 5,
+    "responsiveness": 5,
+    "variety": 5
+  },
+  "decisions": [
+    "The five-step demo is a narrative workflow rather than a dashboard.",
+    "Implemented and conceptual features carry persistent, explicit badges.",
+    "The legacy private scenario was replaced with a synthetic bread-and-plant experiment.",
+    "The demo uses no remote fonts, images, APIs, storage, or analytics.",
+    "Independent review corrected the result highlight so it is not presented as a per-result chat-context selector.",
+    "External embeddings remain clearly distinguished from the default local Ollama path."
+  ],
+  "slopTest": {
+    "gradientHero": false,
+    "fakeBrowserChrome": false,
+    "repeatedCardGrid": false,
+    "genericCopy": false,
+    "unlabeledConceptFeatures": false
+  }
+}

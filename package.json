@@ -1,0 +1,15 @@
+{
+  "name": "obsidian-echo-journal",
+  "version": "0.8.5",
+  "private": true,
+  "description": "Privacy-first journal recall for Obsidian, with local semantic search and optional bring-your-own AI.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "check": "node --check obsidian-plugin/main.js && node --check scripts/package-plugin.mjs && node --check demo/app.js",
+    "test": "npm run check && node --test tests/test_plugin_core.js",
+    "package": "node scripts/package-plugin.mjs"
+  }
+}

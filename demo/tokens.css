@@ -1,0 +1,61 @@
+/* Hallmark v1.1 · pre-emit critique: P5 H5 E5 S5 R5 V5
+ * genre: atmospheric · macro: Narrative Workflow · nav: N5 Floating pill · footer: Ft5 Statement
+ * deliberate light-paper exception: Bloom palette for a calm, private-journal demo
+ */
+:root {
+  color-scheme: light;
+
+  --font-display: "Iowan Old Style", "Baskerville", "Noto Serif SC", "Songti SC", serif;
+  --font-body: "Avenir Next", "Segoe UI", "Noto Sans SC", "PingFang SC", sans-serif;
+  --font-mono: "SFMono-Regular", "Cascadia Code", "Noto Sans Mono CJK SC", monospace;
+
+  --color-paper: oklch(0.972 0.014 302);
+  --color-surface: oklch(0.988 0.008 306);
+  --color-surface-raised: oklch(0.997 0.004 306);
+  --color-wash: oklch(0.932 0.032 309);
+  --color-wash-strong: oklch(0.889 0.052 314);
+  --color-ink: oklch(0.255 0.035 302);
+  --color-ink-soft: oklch(0.43 0.034 302);
+  --color-ink-muted: oklch(0.565 0.028 302);
+  --color-rule: oklch(0.82 0.026 304);
+  --color-rule-strong: oklch(0.69 0.045 307);
+  --color-accent: oklch(0.44 0.112 322);
+  --color-accent-hover: oklch(0.39 0.126 322);
+  --color-on-accent: oklch(0.98 0.009 304);
+  --color-leaf: oklch(0.48 0.078 161);
+  --color-leaf-wash: oklch(0.92 0.035 157);
+  --color-warning: oklch(0.49 0.105 63);
+  --color-warning-wash: oklch(0.94 0.036 72);
+  --color-focus: oklch(0.56 0.15 265);
+  --color-bloom-one: oklch(0.82 0.065 315 / 0.58);
+  --color-bloom-two: oklch(0.87 0.052 160 / 0.44);
+  --color-overlay: oklch(0.18 0.025 302 / 0.5);
+
+  --shadow-float: 0 0.75rem 2.25rem oklch(0.28 0.035 302 / 0.12);
+  --shadow-soft: 0 1.25rem 4rem oklch(0.28 0.035 302 / 0.08);
+  --shadow-step: 0 0.25rem 0.8rem oklch(0.3 0.03 302 / 0.08);
+
+  --space-2xs: 0.35rem;
+  --space-xs: 0.6rem;
+  --space-sm: 0.9rem;
+  --space-md: 1.25rem;
+  --space-lg: 1.8rem;
+  --space-xl: 2.6rem;
+  --space-2xl: 4.25rem;
+  --space-3xl: 6.5rem;
+
+  --page-gutter: clamp(1rem, 4vw, 4.5rem);
+  --content-max: 76rem;
+  --reading-max: 43rem;
+
+  --radius-sm: 0.55rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.6rem;
+  --radius-pill: 999px;
+
+  --rule-hair: 1px;
+  --control-height: 2.9rem;
+  --motion-fast: 140ms;
+  --motion-step: 260ms;
+  --ease-standard: cubic-bezier(0.2, 0.75, 0.25, 1);
+}

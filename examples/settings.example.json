@@ -1,0 +1,15 @@
+{
+  "_comment": "Synthetic example only. No API key is bundled; use your own credentials and never commit your real data.json.",
+  "provider": "ollama",
+  "ollamaModel": "bge-m3",
+  "ollamaBaseUrl": "http://127.0.0.1:11434",
+  "openaiModel": "text-embedding-3-large",
+  "openaiBaseUrl": "https://api.openai.com/v1",
+  "openaiApiKey": "",
+  "guidanceEnabled": false,
+  "guidanceBaseUrl": "https://api.openai.com/v1",
+  "guidanceApiKey": "",
+  "guidanceModel": "gpt-4.1-mini",
+  "includeFolders": "Journal, Daily Notes",
+  "indexDir": ".diary-review"
+}

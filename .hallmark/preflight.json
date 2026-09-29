@@ -1,0 +1,18 @@
+{
+  "version": "1.1",
+  "genre": "atmospheric",
+  "macrostructure": "Narrative Workflow",
+  "theme": "Bloom",
+  "navigation": "N5 Floating pill",
+  "footer": "Ft5 Statement",
+  "imagePlan": "No photos or generated imagery; typography, rules, and soft CSS color fields carry the atmosphere.",
+  "typography": {
+    "display": "Iowan Old Style / Baskerville / Noto Serif SC",
+    "body": "Avenir Next / Segoe UI / Noto Sans SC",
+    "mono": "SFMono-Regular / Cascadia Code"
+  },
+  "motion": ["step opacity transition", "button press feedback"],
+  "contentSafety": "All visible narrative content is synthetic; the private legacy demo is not copied.",
+  "responsiveWidths": [320, 375, 414, 768, 1280]
+}
+

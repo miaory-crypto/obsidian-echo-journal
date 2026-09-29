@@ -1,0 +1,9 @@
+{
+  "id": "diary-review",
+  "name": "ECHO · 日记复盘",
+  "version": "0.8.5",
+  "minAppVersion": "1.0.0",
+  "description": "从过去的日记中找回相关经历，并与拥有个人上下文的 ECHO 连续对话。",
+  "author": "EVA",
+  "isDesktopOnly": true
+}
